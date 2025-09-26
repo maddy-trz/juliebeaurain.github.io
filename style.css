@@ -1,77 +1,166 @@
-/* General reset */
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Hero section */
+body {
+  font-family: 'Lato', Arial, sans-serif; /* similar to live site */
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Hero Section */
 .hero {
-  background: url('images/hero.jpg') no-repeat center center/cover;
+  position: relative;
   height: 80vh;
+  background: url('images/hero.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
-  position: relative;
+  color: #fff;
 }
 
 .hero .overlay {
-  background: rgba(0,0,0,0.5);
-  padding: 2rem;
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.45); /* similar transparency */
+  padding: 3rem 2rem;
+  border-radius: 10px;
 }
 
+.hero h1 {
+  font-family: 'Playfair Display', serif; /* elegant heading font */
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+/* Navigation */
 nav {
-  background: #f8f8f8;
-  padding: 10px 20px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
+nav ul li a:hover,
 nav ul li a.active {
-  color: #0077cc;
+  color: #d65c4f; /* highlight color like original site */
 }
 
+/* Main Content */
 .content {
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 3rem auto;
   padding: 0 1rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f0f0f0;
-  margin-top: 2rem;
+/* Headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
 }
 
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #444;
+}
+
+/* Services Cards */
+.content h3 + p {
+  margin-bottom: 1.5rem;
+}
+
+/* Testimonials */
+blockquote {
+  border-left: 4px solid #d65c4f;
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  border-radius: 5px;
+}
+
+blockquote footer {
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  color: #555;
+}
+
+/* Gallery Images */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 }
 
 .gallery img {
   width: 30%;
   border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #f5f5f5;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .gallery img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gallery img {
+    width: 100%;
+  }
 }
