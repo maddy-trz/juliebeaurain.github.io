@@ -1,57 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Julie Beaurain</title>
-  <!-- Fonts -->
+
+  <!-- Rock Salt for headings -->
   <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-  <!-- CSS -->
+
+  <!-- Your CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="slider">
-    <div class="slide active">
-      <img src="images/hero1.webp" alt="Bien-être et Ayurveda">
+  <!-- HERO / SLIDER -->
+  <header class="hero">
+    <div class="slider" id="heroSlider" aria-roledescription="carousel">
+
+      <!-- Slides: add/remove .slide blocks or add images in images/ named hero1.webp ... hero10.webp -->
+      <div class="slide active"><img src="images/hero1.webp" alt="Bien-être et Ayurveda" loading="lazy"></div>
+      <div class="slide"><img src="images/hero2.webp" alt="Yoga et Sérénité" loading="lazy"></div>
+      <div class="slide"><img src="images/hero3.webp" alt="Massages Ayurvédiques" loading="lazy"></div>
+      <div class="slide"><img src="images/hero4.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero5.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero6.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero7.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero8.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero9.webp" alt="" loading="lazy"></div>
+      <div class="slide"><img src="images/hero10.webp" alt="" loading="lazy"></div>
+
+      <!-- Overlay text -->
+      <div class="overlay">
+        <h1>Éveillez votre Bien-Être</h1>
+        <p class="subtitle">Le Chemin vers la Pleine Santé</p>
+        <h2 class="name">Julie Beaurain</h2>
+        <p class="desc">Coach Sportif · Consultations ayurvédiques · Yoga · Jyotish · Massages</p>
+      </div>
+
+      <!-- Controls -->
+      <button class="nav prev" aria-label="Précédent">‹</button>
+      <button class="nav next" aria-label="Suivant">›</button>
+
+      <!-- Dots (created by JS) -->
+      <div class="dots" aria-hidden="false"></div>
     </div>
-    <div class="slide">
-      <img src="images/hero2.webp" alt="Yoga et Sérénité">
-    </div>
-    <div class="slide">
-      <img src="images/hero3.webp" alt="Massages Ayurvédiques">
-    </div>
+  </header>
 
-    <!-- Overlay text -->
-    <div class="overlay">
-      <h1>Éveillez votre Bien-Être</h1>
-      <p>Le Chemin vers la Pleine Santé</p>
-      <h1>Julie Beaurain</h1>
-      <p>Coach Sportif · Consultations ayurvédiques · Yoga · Jyotish · Massages</p>
-    </div>
-  </div>
-</header>
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Témoignages</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul>
-    <li><a href="index.html" class="active">Accueil</a></li>
-    <li><a href="about.html">À propos</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="testimonials.html">Témoignages</a></li>
-  </ul>
-</nav>
+  <!-- MAIN -->
+  <main class="content">
+    <h3>Bienvenue</h3>
+    <p>Je vous accompagne grâce à l’Ayurveda, le Jyotish, le Yoga et les massages ayurvédiques pour retrouver équilibre et vitalité.</p>
+  </main>
 
-<main class="content">
-  <h2>Bienvenue</h2>
-  <p>Je vous accompagne grâce à l’Ayurveda, le Jyotish, le Yoga et les massages ayurvédiques pour retrouver équilibre et vitalité.</p>
-</main>
+  <footer>
+    <p>&copy; 2025 Julie Beaurain - Tous droits réservés</p>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Julie Beaurain - Tous droits réservés</p>
-</footer>
-
-<!-- Slider Script -->
-<script src="script.js"></script>
+  <!-- Slider script -->
+  <script src="script.js"></script>
 </body>
 </html>
