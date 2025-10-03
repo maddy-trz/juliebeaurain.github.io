@@ -1,72 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julie Beaurain</title>
-
-  <!-- Rock Salt for headings -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-
-  <!-- Your CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Verdana, sans-serif;
+      color: #333;
+      background: #fff;
+    }
+
+    .hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .slider {
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* Overlay always visible */
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 5;
+      text-shadow: 0px 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .overlay h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .overlay .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .overlay .name {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .overlay .desc {
+      font-size: 1rem;
+    }
+
+    /* Navigation arrows */
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      z-index: 10;
+    }
+    .nav.prev { left: 10px; }
+    .nav.next { right: 10px; }
+
+    /* Dots */
+    .dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .dots button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.6);
+      cursor: pointer;
+    }
+    .dots button.active {
+      background: white;
+    }
+
+    nav {
+      background: #f8f8f8;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: bold; }
+    nav ul li a.active { color: #0077cc; }
+
+    main.content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO / SLIDER -->
-  <header class="hero">
-    <div class="slider" id="heroSlider" aria-roledescription="carousel">
+<header class="hero">
+  <div class="slider" id="heroSlider" aria-roledescription="carousel">
+    <!-- Slides -->
+    <div class="slide active"><img src="images/hero1.webp" alt="Bien-être et Ayurveda" loading="lazy"></div>
+    <div class="slide"><img src="images/hero2.webp" alt="Yoga et Sérénité" loading="lazy"></div>
+    <div class="slide"><img src="images/hero3.webp" alt="Massages Ayurvédiques" loading="lazy"></div>
+    <div class="slide"><img src="images/hero4.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero5.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero6.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero7.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero8.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero9.webp" alt="" loading="lazy"></div>
+    <div class="slide"><img src="images/hero10.webp" alt="" loading="lazy"></div>
 
-      <!-- Slides: add/remove .slide blocks or add images in images/ named hero1.webp ... hero10.webp -->
-      <div class="slide active"><img src="images/hero1.webp" alt="Bien-être et Ayurveda" loading="lazy"></div>
-      <div class="slide"><img src="images/hero2.webp" alt="Yoga et Sérénité" loading="lazy"></div>
-      <div class="slide"><img src="images/hero3.webp" alt="Massages Ayurvédiques" loading="lazy"></div>
-      <div class="slide"><img src="images/hero4.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero5.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero6.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero7.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero8.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero9.webp" alt="" loading="lazy"></div>
-      <div class="slide"><img src="images/hero10.webp" alt="" loading="lazy"></div>
+    <!-- Controls -->
+    <button class="nav prev" aria-label="Précédent">‹</button>
+    <button class="nav next" aria-label="Suivant">›</button>
+    <div class="dots"></div>
+  </div>
 
-      <!-- Overlay text -->
-      <div class="overlay">
-        <h1>Éveillez votre Bien-Être</h1>
-        <p class="subtitle">Le Chemin vers la Pleine Santé</p>
-        <h2 class="name">Julie Beaurain</h2>
-        <p class="desc">Coach Sportif · Consultations ayurvédiques · Yoga · Jyotish · Massages</p>
-      </div>
+  <!-- Overlay fixed on top -->
+  <div class="overlay">
+    <h1>Éveillez votre Bien-Être</h1>
+    <p class="subtitle">Le Chemin vers la Pleine Santé</p>
+    <h2 class="name">Julie Beaurain</h2>
+    <p class="desc">Coach Sportif · Consultations ayurvédiques · Yoga · Jyotish · Massages</p>
+  </div>
+</header>
 
-      <!-- Controls -->
-      <button class="nav prev" aria-label="Précédent">‹</button>
-      <button class="nav next" aria-label="Suivant">›</button>
+<nav>
+  <ul>
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="testimonials.html">Témoignages</a></li>
+  </ul>
+</nav>
 
-      <!-- Dots (created by JS) -->
-      <div class="dots" aria-hidden="false"></div>
-    </div>
-  </header>
+<main class="content">
+  <h2>Bienvenue</h2>
+  <p>Je vous accompagne grâce à l’Ayurveda, le Jyotish, le Yoga et les massages ayurvédiques pour retrouver équilibre et vitalité.</p>
+</main>
 
-  <!-- NAV -->
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="testimonials.html">Témoignages</a></li>
-    </ul>
-  </nav>
+<footer>
+  <p>&copy; 2025 Julie Beaurain - Tous droits réservés</p>
+</footer>
 
-  <!-- MAIN -->
-  <main class="content">
-    <h3>Bienvenue</h3>
-    <p>Je vous accompagne grâce à l’Ayurveda, le Jyotish, le Yoga et les massages ayurvédiques pour retrouver équilibre et vitalité.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Julie Beaurain - Tous droits réservés</p>
-  </footer>
-
-  <!-- Slider script -->
-  <script src="script.js"></script>
+<!-- Slider Script -->
+<script src="script.js"></script>
 </body>
 </html>
