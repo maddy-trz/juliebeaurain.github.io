@@ -1,23 +1,16 @@
-/* ---------- Global ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Verdana, Geneva, sans-serif; color: #222; background: #fff; line-height: 1.6; }
+/* ---------- Hero / overlay refined ---------- */
+.hero { position: relative; height: 90vh; min-height: 400px; overflow: hidden; }
 
-/* ---------- Hero / slider ---------- */
-.hero { position: relative; height: 90vh; min-height: 380px; overflow: hidden; }
-
-/* slides container: each slide is absolute and stacked, we fade between them */
 .slider { height: 100%; position: relative; }
 .slide {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   opacity: 0; transition: opacity 1s ease-in-out;
   display: flex; align-items: center; justify-content: center;
 }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .slide.active { opacity: 1; z-index: 1; }
 
-/* image fills area */
-.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* Overlay always visible with semi-transparent white background */
+/* Overlay always visible with refined styling */
 .overlay {
   position: absolute;
   top: 50%;
@@ -27,60 +20,28 @@ body { font-family: Verdana, Geneva, sans-serif; color: #222; background: #fff; 
   color: #000; /* black text */
   z-index: 5;
   background: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
-  padding: 30px 35px;
-  border-radius: 12px;
-  max-width: 90%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  padding: 35px 45px; /* slightly more padding for elegance */
+  border-radius: 15px; /* smoother corners */
+  max-width: 85%;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.18); /* softer shadow for depth */
 }
 
-/* Headings inside overlay */
-.overlay h1 { font-family: 'Rock Salt', cursive; font-size: 2.5rem; margin: 0.5rem 0; }
-.overlay .subtitle { font-size: 1.2rem; margin-bottom: 1rem; }
-.overlay .name { font-family: 'Rock Salt', cursive; font-size: 2rem; margin: 0.5rem 0; }
-.overlay .desc { font-size: 1rem; }
-
-/* ---------- Controls ---------- */
-.nav {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(0,0,0,0.4); color: #fff; border: none; width: 44px; height: 44px;
-  font-size: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s; z-index: 10;
+/* Headings inside overlay, refined sizes */
+.overlay h1 { 
+  font-family: 'Rock Salt', cursive; 
+  font-size: 3rem; 
+  margin: 0.6rem 0; 
 }
-.nav:hover { background: rgba(0,0,0,0.6); }
-.prev { left: 18px; }
-.next { right: 18px; }
-
-/* ---------- Dots ---------- */
-.dots { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display:flex; gap:8px; z-index:10; }
-.dots button { width:10px; height:10px; border-radius:50%; border:none; background: rgba(255,255,255,0.5); cursor:pointer; }
-.dots button.active { background: #fff; box-shadow: 0 0 0 3px rgba(0,0,0,0.12); }
-
-/* ---------- Nav bar ---------- */
-nav { background: #faf9f7; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-nav ul { list-style:none; display:flex; justify-content:center; gap:22px; padding:12px 10px; }
-nav a { text-decoration:none; color:#333; font-weight:600; }
-nav a.active { color:#c85b4c; }
-
-/* ---------- Content ---------- */
-.content { max-width: 920px; margin: 2.5rem auto; padding: 0 1rem; }
-.content h2 { font-family: 'Rock Salt', cursive; font-size: 1.55rem; margin-bottom: 0.7rem; }
-
-/* ---------- Blockquote ---------- */
-blockquote { border-left: 4px solid #c85b4c; background:#fbfbfb; padding:14px 16px; margin:1.2rem 0; font-style:italic; border-radius:6px; }
-
-/* ---------- Footer ---------- */
-footer { text-align:center; padding:18px 8px; background:#f6f6f6; color:#666; font-size:0.95rem; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .overlay { padding:20px; max-width:92%; }
-  .overlay h1 { font-size:2.2rem; }
-  .overlay .name { font-size:1.6rem; }
-  .nav { width:40px; height:40px; font-size:22px; }
+.overlay .subtitle { 
+  font-size: 1.35rem; 
+  margin-bottom: 1.1rem; 
 }
-@media (max-width: 480px) {
-  .overlay { padding:14px; }
-  .overlay h1 { font-size:1.6rem; }
-  .overlay .subtitle, .overlay .desc { font-size:0.95rem; }
-  .dots { bottom: 8px; }
+.overlay .name { 
+  font-family: 'Rock Salt', cursive; 
+  font-size: 2.2rem; 
+  margin: 0.6rem 0; 
+}
+.overlay .desc { 
+  font-size: 1.1rem; 
+  line-height: 1.4; 
 }
