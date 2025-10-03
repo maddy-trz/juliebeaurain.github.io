@@ -8,142 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Verdana, sans-serif;
-      color: #333;
-      background: #fff;
-    }
-
-    .hero {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
-    }
-
-    .slider {
-      height: 100%;
-      position: relative;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .slide.active {
-      opacity: 1;
-    }
-
-    /* Overlay always visible */
-    .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: black;
-      z-index: 5;
-      text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
-    }
-
-    .overlay h1 {
-      font-family: 'Rock Salt', cursive;
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-    }
-
-    .overlay .subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .overlay .name {
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
-
-    .overlay .desc {
-      font-size: 1rem;
-    }
-
-    /* Navigation arrows */
-    .nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      background: rgba(0,0,0,0.4);
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      z-index: 10;
-    }
-    .nav.prev { left: 10px; }
-    .nav.next { right: 10px; }
-
-    /* Dots */
-    .dots {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-    .dots button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.6);
-      cursor: pointer;
-    }
-    .dots button.active {
-      background: white;
-    }
-
-    nav {
-      background: #f8f8f8;
-      padding: 10px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li { margin: 0 15px; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: bold; }
-    nav ul li a.active { color: #0077cc; }
-
-    main.content {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #f0f0f0;
-      margin-top: 2rem;
-    }
-  </style>
 </head>
 <body>
 
@@ -186,13 +50,19 @@
 </nav>
 
 <main class="content">
-  <h2>Bienvenue ·  Votre Chemin vers la Pleine Santé</h2>
-  <p>Je m'appelle Julie Beaurain et je suis là pour vous accompagner vers le chemin du bien-être et de la pleine santé. En tant qu'éducateur de santé en Ayurveda, coach sportif, coach holistique, coach en yoga, praticien en massages ayurvédiques et soins, ainsi que consultant en Ayurveda et en Jyotish, je suis dévouée à vous aider à nourrir votre corps, votre esprit et votre âme. 
-Mon approche se base sur une compréhension profonde de votre constitution unique (dosha) en Ayurveda, me permettant de vous guider vers un équilibre personnel. Je conçois des programmes de coaching sportif qui vont au-delà de l'exercice physique, en intégrant également une alimentation équilibrée et des techniques de relaxation pour renforcer votre corps de manière holistique.
-Mon coaching holistique prend en compte tous les aspects de votre vie, y compris la nutrition, l'exercice, la gestion du stress et le développement personnel. En tant que coach en yoga, je vous accompagne dans des pratiques qui améliorent non seulement votre flexibilité et votre force physique, mais aussi votre paix intérieure.
-Mes massages ayurvédiques et soins sont des moments de détente conçus pour éliminer les toxines, apaiser vos muscles et rétablir l'équilibre énergétique de votre corps. En tant que consultant en Ayurveda et en Jyotish, je vous offre des conseils personnalisés basés sur des principes anciens, vous aidant à prendre des décisions éclairées pour votre santé et votre bien-être.
-Je suis ici pour vous aider à atteindre un état de bien-être optimal et une vie équilibrée, énergique et épanouissante. Rejoignez-moi dans ce voyage vers la pleine santé. Ensemble, nous pouvons créer une vie plus saine et plus heureuse.
-</p>
+  <h2>Bienvenue · Votre Chemin vers la Pleine Santé</h2>
+
+  <p>Je m'appelle Julie Beaurain et je suis là pour vous accompagner vers le chemin du bien-être et de la pleine santé.</p>
+
+  <p>En tant que <strong>éducatrice de santé en Ayurveda</strong>, <strong>coach sportif</strong>, <strong>coach holistique</strong>, <strong>coach en yoga</strong>, <strong>praticienne en massages ayurvédiques et soins</strong>, ainsi que <strong>consultante en Ayurveda et Jyotish</strong>, je suis dévouée à vous aider à nourrir votre corps, votre esprit et votre âme.</p>
+
+  <p>Mon approche se base sur une compréhension profonde de votre constitution unique (dosha) en Ayurveda, me permettant de vous guider vers un équilibre personnel. Je conçois des programmes de coaching sportif qui vont au-delà de l'exercice physique, en intégrant également une alimentation équilibrée et des techniques de relaxation pour renforcer votre corps de manière holistique.</p>
+
+  <p>Mon coaching holistique prend en compte tous les aspects de votre vie, y compris la nutrition, l'exercice, la gestion du stress et le développement personnel. En tant que coach en yoga, je vous accompagne dans des pratiques qui améliorent non seulement votre flexibilité et votre force physique, mais aussi votre paix intérieure.</p>
+
+  <p>Mes massages ayurvédiques et soins sont des moments de détente conçus pour éliminer les toxines, apaiser vos muscles et rétablir l'équilibre énergétique de votre corps. En tant que consultante en Ayurveda et Jyotish, je vous offre des conseils personnalisés basés sur des principes anciens, vous aidant à prendre des décisions éclairées pour votre santé et votre bien-être.</p>
+
+  <p>Je suis ici pour vous aider à atteindre un état de bien-être optimal et une vie équilibrée, énergique et épanouissante. Rejoignez-moi dans ce voyage vers la pleine santé. Ensemble, nous pouvons créer une vie plus saine et plus heureuse.</p>
 </main>
 
 <footer>
