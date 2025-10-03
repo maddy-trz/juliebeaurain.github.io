@@ -1,166 +1,102 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global body text in Verdana */
 body {
-  font-family: 'Lato', Arial, sans-serif; /* similar to live site */
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #fff;
+  background: #fff;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
-  position: relative;
-  height: 80vh;
   background: url('images/hero.jpg') no-repeat center center/cover;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   text-align: center;
-  color: #fff;
 }
 
 .hero .overlay {
-  background: rgba(0, 0, 0, 0.45); /* similar transparency */
-  padding: 3rem 2rem;
-  border-radius: 10px;
+  background: rgba(0,0,0,0.5);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
+/* Rock Salt for hero titles */
 .hero h1 {
-  font-family: 'Playfair Display', serif; /* elegant heading font */
+  font-family: 'Rock Salt', cursive;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
+/* Hero subtitle (smaller text under the title) */
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* Navigation */
 nav {
-  background-color: #fdfdfd;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #f8f8f8;
+  padding: 10px;
 }
 
 nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
-  font-weight: 600;
-  transition: color 0.3s;
+  font-weight: bold;
 }
 
-nav ul li a:hover,
 nav ul li a.active {
-  color: #d65c4f; /* highlight color like original site */
+  color: #0077cc;
 }
 
-/* Main Content */
+/* Optional: Nav first link styled in Rock Salt */
+nav ul li:first-child a {
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.2rem;
+}
+
+/* Content area */
 .content {
-  max-width: 900px;
-  margin: 3rem auto;
+  max-width: 800px;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Headings */
-h2 {
-  font-family: 'Playfair Display', serif;
+/* Section headings */
+.content h2 {
+  font-family: 'Rock Salt', cursive;
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
+  margin-top: 1rem;
 }
 
-h3 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  color: #444;
-}
-
-/* Services Cards */
-.content h3 + p {
-  margin-bottom: 1.5rem;
-}
-
-/* Testimonials */
+/* Blockquotes */
 blockquote {
-  border-left: 4px solid #d65c4f;
-  background-color: #f9f9f9;
-  padding: 1rem 1.5rem;
+  border-left: 4px solid #0077cc;
   margin: 1.5rem 0;
+  padding-left: 1rem;
   font-style: italic;
-  border-radius: 5px;
-}
-
-blockquote footer {
-  margin-top: 0.5rem;
-  font-style: normal;
-  font-weight: bold;
-  text-align: right;
-  color: #555;
-}
-
-/* Gallery Images */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 30%;
-  border-radius: 8px;
-  object-fit: cover;
+  background: #f9f9f9;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1.5rem 0;
-  background-color: #f5f5f5;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1.2rem;
-  }
-  .gallery img {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .gallery img {
-    width: 100%;
-  }
+  padding: 1rem;
+  background: #f0f0f0;
+  margin-top: 2rem;
 }
