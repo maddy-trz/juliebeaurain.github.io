@@ -47,48 +47,29 @@ nav a { text-decoration:none; color:#333; font-weight:600; }
 nav a.active { color:#c85b4c; }
 
 /* ---------- Content ---------- */
-.content { max-width: 800px; margin: 2.5rem auto; padding: 0 1rem; line-height: 1.65; font-size: 1rem; letter-spacing: 0.3px; }
-.content h2 { font-family: 'Rock Salt', cursive; font-size: 2rem; margin-bottom: 1rem; text-align: center; }
-
-/* ---------- Blockquote ---------- */
-blockquote { border-left: 4px solid #c85b4c; background:#fbfbfb; padding:14px 16px; margin:1.2rem 0; font-style:italic; border-radius:6px; }
-
-/* ---------- Footer ---------- */
-footer { text-align:center; padding:18px 8px; background:#f6f6f6; color:#666; font-size:0.95rem; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .overlay { padding:25px 30px; max-width:92%; }
-  .overlay h1 { font-size:2.5rem; }
-  .overlay .name { font-size:2rem; }
-  .nav { width:40px; height:40px; font-size:22px; }
-}
-@media (max-width: 480px) {
-  .overlay { padding:18px; }
-  .overlay h1 { font-size:1.8rem; }
-  .overlay .subtitle, .overlay .desc { font-size:1rem; }
-  .dots { bottom: 8px; }
-}
-
+.content { max-width: 1100px; margin: 2.5rem auto; padding: 0 1rem; line-height: 1.65; font-size: 1rem; letter-spacing: 0.3px; }
+.content h2 { font-family: 'Rock Salt', cursive; font-size: 2rem; margin-bottom: 2rem; text-align: center; color: #222; }
 
 /* ---------- Intro Section (image left, text right) ---------- */
-.intro {
+.intro-section {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  padding: 60px 20px;
-  background: #fff;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background-color: #fdfaf7; /* subtle beige to separate section */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
-.intro-container {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  max-width: 1100px;
-  flex-wrap: wrap;
+.intro-image {
+  flex: 0 0 350px;
 }
 
 .intro-image img {
-  width: 350px;
+  width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.1);
@@ -96,36 +77,64 @@ footer { text-align:center; padding:18px 8px; background:#f6f6f6; color:#666; fo
 
 .intro-text {
   flex: 1;
-  min-width: 300px;
-}
-
-.intro-text h2 {
-  font-family: 'Rock Salt', cursive;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-  text-align: left;
 }
 
 .intro-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #333;
 }
 
+/* ---------- Blockquote ---------- */
+blockquote {
+  border-left: 4px solid #c85b4c;
+  background:#fbfbfb;
+  padding:14px 16px;
+  margin:1.2rem 0;
+  font-style:italic;
+  border-radius:6px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align:center;
+  padding:18px 8px;
+  background:#f6f6f6;
+  color:#666;
+  font-size:0.95rem;
+}
+
 /* ---------- Responsive ---------- */
-@media (max-width: 800px) {
-  .intro-container {
+@media (max-width: 900px) {
+  .overlay { padding:25px 30px; max-width:92%; }
+  .overlay h1 { font-size:2.5rem; }
+  .overlay .name { font-size:2rem; }
+  .nav { width:40px; height:40px; font-size:22px; }
+
+  .intro-section {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 30px;
   }
 
-  .intro-image img {
-    width: 80%;
+  .intro-image {
+    flex: 0 0 auto;
     max-width: 320px;
   }
 
-  .intro-text h2 {
-    text-align: center;
+  .intro-text p {
+    text-align: left;
   }
+}
+
+@media (max-width: 480px) {
+  .overlay { padding:18px; }
+  .overlay h1 { font-size:1.8rem; }
+  .overlay .subtitle, .overlay .desc { font-size:1rem; }
+  .dots { bottom: 8px; }
+
+  .intro-image img { width: 90%; }
 }
