@@ -69,3 +69,63 @@ footer { text-align:center; padding:18px 8px; background:#f6f6f6; color:#666; fo
   .overlay .subtitle, .overlay .desc { font-size:1rem; }
   .dots { bottom: 8px; }
 }
+
+
+/* ---------- Intro Section (image left, text right) ---------- */
+.intro {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.intro-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.intro-text h2 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  text-align: left;
+}
+
+.intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image img {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .intro-text h2 {
+    text-align: center;
+  }
+}
